@@ -19,6 +19,7 @@ object FilterOutTheGeese {
 
   val geese: Array[String] = Array("African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher")
 
+
   def gooseFilter(birds: List[String]): List[String] = {
     var result: List[String] = List.empty
     var isGoose: Boolean = false;
