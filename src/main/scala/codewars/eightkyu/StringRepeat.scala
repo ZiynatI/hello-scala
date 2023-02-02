@@ -9,5 +9,11 @@ object StringRepeat {
   //5, "Hello" -> "HelloHelloHelloHelloHello"
 
 
-
+  def repeatStr(times: Int, str: String): String = {
+    var sb: StringBuilder = new StringBuilder
+    for (i <- 0 to times) {
+      sb.append(str)
+    }
+    sb.toString()
+  }
 }
