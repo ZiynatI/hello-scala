@@ -22,17 +22,15 @@ object FilterOutTheGeese {
 
   def gooseFilter(birds: List[String]): List[String] = {
     var result: List[String] = List.empty
-    var isGoose: Boolean = false;
-    for (i <- 0 until birds.length; j <- 0 until geese.length) {
-      if (birds(i).equals(geese(j))) {
-        isGoose = true
-      }
-      if (j == geese.length - 1) {
-        if (isGoose) {
-          isGoose = false
-        } else {
-          result = birds(i) :: result
+    for (bird <- birds) {
+      var isGoose = false;
+      for (goose <- geese if !isGoose) {
+        if (bird == goose) {
+          isGoose = true
         }
+      }
+      if (!isGoose) {
+        result = bird :: result
       }
     }
     result.reverse
