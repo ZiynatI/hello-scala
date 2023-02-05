@@ -9,5 +9,7 @@ object FindMultiplesOfANumber {
   //The limit will always be higher than the base.
   //For example, if the parameters passed are (2, 6), the function should return
   //[2, 4, 6] as 2, 4, and 6 are the multiples of 2 up to 6.
-//  def findMultiples(n: Int, limit: Int): List[Int] = List
+  def findMultiples(n: Int, limit: Int): List[Int] = {
+    (n to limit by n).toList
+  }
 }
