@@ -11,7 +11,7 @@ object StringRepeat {
 
   def repeatStr(times: Int, str: String): String = {
     var sb: StringBuilder = new StringBuilder
-    for (i <- 0 to times) {
+    for (i <- 0 until times) {
       sb.append(str)
     }
     sb.toString()
