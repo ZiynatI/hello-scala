@@ -10,8 +10,8 @@ object FindMaximumAndMinimumValuesOfAList {
   //* [5]                             -> min = 5, max = 5
   //Notes
   //    You may consider that there will not be any empty arrays/vectors.
-  def minimum(lst: List[Int]): Int = {var min:Int=lst.g
-    for(a<- 0 until lst.length){if(min>)}}
-
-  def maximum(lst: List[Int]): Int = ???
+//  def minimum(lst: List[Int]): Int = {var min:Int=lst.g
+//    for(a<- 0 until lst.length){if(min>)}}
+//
+//  def maximum(lst: List[Int]): Int = ???
 }

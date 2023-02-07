@@ -32,5 +32,5 @@ object Currying {
     recur(a)
   }
 
-  def sum(f: Int => Int) = mapReduce(f, (x, y) => x + y, 0)
+//  def sum(f: Int => Int) = mapReduce(f, (x, y) => x + y, 0)
 }

@@ -9,10 +9,10 @@ object DifferenceOfVolumesOfCuboids {
   //and the volume of b is 20. Therefore, the function should return 8.
   //Your function will be tested with pre-made examples as well as random ones.
   //If you can, try writing it in one line of code.
-  def findDifference(a: (Int, Int, Int), b: (Int, Int, Int)): Int = {
-    var aprod: Int = 0
-    for(i<- 0 until a.l)
-    var bprod: Int = b.productArity
-    aprod - bprod
-  }
+//  def findDifference(a: (Int, Int, Int), b: (Int, Int, Int)): Int = {
+//    var aprod: Int = 0
+//    for(i<- 0 until a.l)
+//    var bprod: Int = b.productArity
+//    aprod - bprod
+//  }
 }
