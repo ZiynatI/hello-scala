@@ -8,5 +8,6 @@ object CountOfPositivesSumOfNegatives {
   //If the input is an empty array or is null, return an empty array.
   //Example
   //For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
-  def countPositivesSumNegatives(integers: Array[Int]): (Int, Int) = (integers.filter(x => x > 0).map(_ => 1).sum, integers.filter(x => x < 0).sum)
+  def countPositivesSumNegatives(integers: Array[Int]): (Int, Int) =
+    (integers.count(x => x > 0), integers.filter(x => x < 0).sum)
 }
