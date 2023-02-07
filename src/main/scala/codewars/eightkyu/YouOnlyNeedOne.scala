@@ -7,7 +7,7 @@ object YouOnlyNeedOne {
   //Return true if the array contains the value, false if not.
   def check(seq: List[Any], elem: Any) = {
     var b: Boolean = false
-    for (i <- 0 until seq.length) {
+    for (i <- seq.indices) {
       if (seq(i).equals(elem)) {
         b = true
       }
