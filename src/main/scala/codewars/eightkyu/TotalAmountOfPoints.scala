@@ -16,12 +16,16 @@ object TotalAmountOfPoints {
   //    our team always plays 10 matches in the championship
   //    0 <= x <= 4
   //    0 <= y <= 4
-  def award(s: String): Int = if (s.substring(0, s.indexOf(':')).toInt > s.substring(s.indexOf(':') + 1).toInt) {
-    3
-  } else if (s.substring(0, s.indexOf(':')).toInt < s.substring(s.indexOf(':') + 1).toInt) {
-    0
-  } else {
-    1
+  def award(s: String): Int = {
+    val s1: Int = s.substring(0, s.indexOf(':')).toInt
+    val s2: Int = s.substring(s.indexOf(':') + 1).toInt
+    if (s1 > s2) {
+      3
+    } else if (s1 < s2) {
+      0
+    } else {
+      1
+    }
   }
 
   def points(games: Vector[String]): Int = games.map(award).sum
