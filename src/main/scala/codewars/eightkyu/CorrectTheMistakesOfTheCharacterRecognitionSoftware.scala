@@ -21,7 +21,6 @@ object CorrectTheMistakesOfTheCharacterRecognitionSoftware {
   } else {
     c
   }
-
   def correct(s: String): String = s.toCharArray.map(x => correctLetter(x)).mkString
 
 }

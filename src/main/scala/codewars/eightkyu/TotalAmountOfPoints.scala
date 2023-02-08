@@ -17,8 +17,9 @@ object TotalAmountOfPoints {
   //    0 <= x <= 4
   //    0 <= y <= 4
   def award(s: String): Int = {
-    val s1: Int = s.substring(0, s.indexOf(':')).toInt
-    val s2: Int = s.substring(s.indexOf(':') + 1).toInt
+    val middle: Int = s.indexOf(':')
+    val s1: Int = s.substring(0, middle).toInt
+    val s2: Int = s.substring(middle + 1).toInt
     if (s1 > s2) {
       3
     } else if (s1 < s2) {
