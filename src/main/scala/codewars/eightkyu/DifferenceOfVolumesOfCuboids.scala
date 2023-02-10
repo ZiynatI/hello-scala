@@ -1,6 +1,8 @@
 package codewars.eightkyu
 
-object DifferenceOfVolumesOfCuboids {
+object DifferenceOfVolumesOfCuboids extends App {
+  type Cuboid = (Int, Int, Int)
+
   //https://www.codewars.com/kata/58cb43f4256836ed95000f97
   //In this simple exercise, you will create a program that will take two lists of integers, a and b.
   //Each list will consist of 3 positive integers above 0, representing the dimensions of cuboids a and b.
@@ -9,10 +11,13 @@ object DifferenceOfVolumesOfCuboids {
   //and the volume of b is 20. Therefore, the function should return 8.
   //Your function will be tested with pre-made examples as well as random ones.
   //If you can, try writing it in one line of code.
-//  def findDifference(a: (Int, Int, Int), b: (Int, Int, Int)): Int = {
-//    var aprod: Int = 0
-//    for(i<- 0 until a.l)
-//    var bprod: Int = b.productArity
-//    aprod - bprod
-//  }
+  def findDifference(a: Cuboid, b: Cuboid): Int = {
+    implicit val numeric: Numeric[Any] =
+      Numeric[Int].asInstanceOf[Numeric[Any]]
+
+    val volume1 = a.productIterator.product.asInstanceOf[Int]
+    val volume2 = b.productIterator.product.asInstanceOf[Int]
+
+    (volume1 - volume2).abs
+  }
 }
