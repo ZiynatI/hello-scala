@@ -50,14 +50,20 @@ object ExpressionsMatter {
   //Explanation:
   //After placing signs and brackets, the Maximum value obtained from the expression (1+2) * 3 = 9.
   //expressionsMatter(1,1,1)  ==>  return 3
-  def expressionMatter(a: Int, b: Int, c: Int): Int =
-  {
-    if (a > b && a > c) {
-      a * (b + c)
-    } else if (b > a && b > c) {
-      b * (a + c)
-    } else {
-      (a + b) * c
+  def expressionMatter(a: Int, b: Int, c: Int): Int = {
+    var result: Int = a + b + c
+    val result2: Int = a * b * c
+    if (result2 > result) {
+      result = result2
     }
+    val result3: Int = (a + b) * c
+    if (result3 > result) {
+      result = result3
+    }
+    val result4: Int = a * (b + c)
+    if (result4 > result) {
+      result = result4
+    }
+    result
   }
 }
