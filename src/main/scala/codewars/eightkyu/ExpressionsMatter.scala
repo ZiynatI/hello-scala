@@ -1,6 +1,9 @@
 package codewars.eightkyu
 
 object ExpressionsMatter {
+  def main(args: Array[String]): Unit = {
+    println(expressionMatter(2,2,4))
+  }
   //https://www.codewars.com/kata/5ae62fcf252e66d44d00008e
   //Task
   //    Given three integers a ,b ,c, return the largest number obtained after inserting the following operators and brackets: +, *, ()
@@ -51,19 +54,18 @@ object ExpressionsMatter {
   //After placing signs and brackets, the Maximum value obtained from the expression (1+2) * 3 = 9.
   //expressionsMatter(1,1,1)  ==>  return 3
   def expressionMatter(a: Int, b: Int, c: Int): Int = {
-    var result: Int = a + b + c
-    val result2: Int = a * b * c
-    if (result2 > result) {
-      result = result2
+    def recurse(values: List[Int]): Int = {
+      values match {
+        case x :: Nil =>
+          x
+        case (x :: y :: tail) =>
+          val v1 = recurse((x * y) :: tail)
+          val v2 = recurse((x + y) :: tail)
+          v1 max v2
+      }
     }
-    val result3: Int = (a + b) * c
-    if (result3 > result) {
-      result = result3
-    }
-    val result4: Int = a * (b + c)
-    if (result4 > result) {
-      result = result4
-    }
-    result
+
+    val exprList = List(a, b, c)
+    recurse(exprList) max recurse(exprList.reverse)
   }
 }
