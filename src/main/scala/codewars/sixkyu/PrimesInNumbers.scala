@@ -1,10 +1,8 @@
 package codewars.sixkyu
 
-import scala.::
-
 object PrimesInNumbers {
   def main(args: Array[String]): Unit = {
-    println(getPrimes(10))
+//    println(getPrimes(100))
     println(factors(10))
   }
 
@@ -34,7 +32,7 @@ object PrimesInNumbers {
     var sb: StringBuilder = new StringBuilder;
     var num: Int = m
     val list: List[Int] = getPrimes(m)
-    for (i <- list) {
+     for (i <- list) {
       var power: Int = 0
       while (num % i == 0) {
         power = power + 1
