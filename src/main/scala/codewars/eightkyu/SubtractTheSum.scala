@@ -126,7 +126,7 @@ object SubtractTheSum {
     var num: Int = n
     while (s.equals("")) {
       num = num - num.toString.map(x => x.getNumericValue).sum
-      s = mapString(num)
+      s = mapString.getOrElse(num, "")
     }
     s
   }
