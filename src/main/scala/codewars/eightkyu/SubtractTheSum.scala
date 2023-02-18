@@ -1,6 +1,9 @@
 package codewars.eightkyu
 
 object SubtractTheSum {
+  def main(args: Array[String]): Unit = {
+    println(subtractSum(10))
+  }
   //https://www.codewars.com/kata/56c5847f27be2c3db20009c3
   //NOTE! This kata can be more difficult than regular 8-kyu katas (lets say 7 or 6 kyu)
   //Complete the function which get an input number n such that n >= 10 and n < 10000, then:
@@ -22,7 +25,7 @@ object SubtractTheSum {
 
   def subtractSum(n: Int): String = {
     val mapString =
-      """1-kiwi
+      """    1-kiwi
     2-pear
     3-kiwi
     4-banana
@@ -121,7 +124,7 @@ object SubtractTheSum {
     97-melon
     98-pineapple
     99-apple
-    100-pineapple""".split("\n").map(x => x.substring(x.indexOf('-') + 1)).toList.zipWithIndex.map { case (s, i) => (i + 1, s) }.toMap
+    100-pineapple""".split("\n").map(x => x.split('-')).toSeq.map(x => x(0).substring(4).toInt -> x(1)).toMap
     var s: String = ""
     var num: Int = n
     while (s.equals("")) {
