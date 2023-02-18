@@ -1,10 +1,8 @@
-package codewars.sixkyu
+package codewars.fivekyu
 
-import org.scalatest._
+import codewars.fivekyu.PrimesInNumbersTest._
 import org.scalatest.Assertions._
 import org.scalatest.flatspec.AnyFlatSpec
-import PrimesInNumbersTest._
-import codewars.fivekyu.PrimesInNumbers
 
 class PrimesInNumbersTest extends AnyFlatSpec {
   it should "pass basic tests" in {
