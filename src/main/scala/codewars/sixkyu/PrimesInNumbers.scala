@@ -1,11 +1,12 @@
 package codewars.sixkyu
 
-import scala.collection.mutable.ArrayBuffer
+import scala.util.control.Breaks
 
 object PrimesInNumbers {
   def main(args: Array[String]): Unit = {
-    println(factors(10))
-    println(factors(10))
+    val time = System.currentTimeMillis()
+    println(factors(29252452))
+    println(s"Computed in ${System.currentTimeMillis() - time} ms")
 
   }
 
@@ -16,19 +17,32 @@ object PrimesInNumbers {
   //with the p(i) in increasing order and n(i) empty if n(i) is 1.
   //Example: n = 86240 should return "(2**5)(5)(7**2)(11)"
 
+
   def factors(m: Int): String = {
     var sb: StringBuilder = new StringBuilder;
     var num: Int = m
-    for (i <- getPrimes(m / 2)) {
+
+    def check(divisor: Int): Unit = {
       var power: Int = 0
-      while (num % i == 0) {
+      while (num % divisor == 0) {
         power = power + 1
-        num = num / i
+        num = num / divisor
       }
       if (power == 1) {
-        sb.append("(" + i + ")")
+        sb.append(s"($divisor)")
       } else if (power > 1) {
-        sb.append("(" + i + "**" + power + ")")
+        sb.append(s"($divisor**$power)")
+      }
+    }
+
+    check(2)
+    val loop = new Breaks
+    loop.breakable {
+      for (divisor <- 3 to num / 2 by 2) {
+        if (num == 1) {
+          loop.break()
+        }
+        check(divisor)
       }
     }
     if (sb.isEmpty) {
