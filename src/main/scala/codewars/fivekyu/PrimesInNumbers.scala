@@ -1,4 +1,4 @@
-package codewars.sixkyu
+package codewars.fivekyu
 
 import scala.util.control.Breaks
 
@@ -19,7 +19,7 @@ object PrimesInNumbers {
 
 
   def factors(m: Int): String = {
-    var sb: StringBuilder = new StringBuilder;
+    val sb: StringBuilder = new StringBuilder
     var num: Int = m
 
     def check(divisor: Int): Unit = {
@@ -38,7 +38,7 @@ object PrimesInNumbers {
     check(2)
     val loop = new Breaks
     loop.breakable {
-      for (divisor <- 3 to num / 2 by 2) {
+      for (divisor <- 3 to num by 2) {
         if (num == 1) {
           loop.break()
         }
