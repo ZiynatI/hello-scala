@@ -125,8 +125,8 @@ object SubtractTheSum {
     98-pineapple
     99-apple
     100-pineapple""".split("\n").map { line =>
-        val split = line.split("-")
-        split(0).trim.toInt -> split(1)
+        val split = line.trim.split("-")
+        split(0).toInt -> split(1)
       }.toMap
     var s: String = ""
     var num: Int = n
