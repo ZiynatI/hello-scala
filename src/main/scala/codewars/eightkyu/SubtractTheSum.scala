@@ -19,6 +19,7 @@ object SubtractTheSum {
   //.
   //...until you find the first n in the list below.
   //There is no preloaded code to help you. This is not about coding skills; think before you code
+
   def subtractSum(n: Int): String = {
     val mapString =
       """1-kiwi
