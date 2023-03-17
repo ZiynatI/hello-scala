@@ -1,11 +1,14 @@
 package codewars.eightkyu
 
 object GetPlanetNameByID {
+  def main(args: Array[String]): Unit = {
+    println(getPlanetName(3))
+  }
   //https://www.codewars.com/kata/515e188a311df01cba000003
   //The function is not returning the correct values. Can you figure out why?
   //Example (Input --> Output ):
   //3 --> "Earth"
-  def getPlanetName(num: Int): String = {
+  private def getPlanetName(num: Int): String = {
     num match {
       case 1 => "Mercury"
       case 2 => "Venus"
